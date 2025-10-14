@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{8D3B3548-CCB3-4070-A1F7-75FDE0E77964}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{A53DEA93-2DC3-4021-9FFB-FD6248D17866}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACz7jiQlda/Zc9Z87eYve5BsHRRMGZv4IEiLd3yXnXSggAAAAAOgAAAAAIAACAAAADN6XdyriOt7XFSPwLLX33PAIgr5JpZ+DMhbPAKlRou3yAAAACM7zO7jQ9IiBFPuNo8LfmmPodmxM6tD+U6MFBwZWZBN0AAAADvwyRlxjYjL5re2Uxc2nerOR0kytciSz5MI9tj+jcEdjHvdlihaL9OxLh/+Kj33NTsVvnubUOVQ8EIHr2k5BMT</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAc0x+sLC0mNHrZR9zgD/WqcDhSw1cgmbrusIJBe+4HZwAAAAAOgAAAAAIAACAAAAD1+IBY+CYgBb/lxex12+HjB8/k7NfHQvmVCUtPndUKeSAAAABoBYiSf4vFzyvU6x2jBRAfnfhscR40bVkGZuZhG0xfjEAAAADFL4fhI+9/8weY+p8nv0tl6aqw69c9WNGIhtaiIuXqeqhLn7MFoCWjM1FIZvLUgVaCmQv2ctivFGZzPKlOL/26</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1007,6 +1007,870 @@ WHERE CODIGO_EMPLEADO=?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Oficina"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{09AEFC6D-73C1-4E6C-8C45-4995E77D7BAF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Oficina"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Oficina\CLIENTES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="CLIENTES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[CLIENTES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oficina\CLIENTES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLsteging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLsteging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[CODIGO_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_CLIENTE"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_CLIENTE]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[NOMBRE_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="NOMBRE_CLIENTE"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE_CLIENTE]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[NOMBRE_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[TELEFONO]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="TELEFONO"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[TELEFONO]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[TELEFONO]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[CIUDAD]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="CIUDAD"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CIUDAD]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CIUDAD]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[PAIS]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PAIS"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[PAIS]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[PAIS]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[LIMITE_CREDITO]"
+                      cachedDataType="numeric"
+                      cachedName="LIMITE_CREDITO"
+                      cachedPrecision="12"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[LIMITE_CREDITO]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[LIMITE_CREDITO]" />
+                    <inputColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO_REP_VENTAS"
+                      externalMetadataColumnId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE_CLIENTE]"
+                      dataType="wstr"
+                      length="150"
+                      name="NOMBRE_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      name="TELEFONO" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      name="CIUDAD" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      name="PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[LIMITE_CREDITO]"
+                      dataType="numeric"
+                      name="LIMITE_CREDITO"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_EMPLEADO_REP_VENTAS" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oficina\CLIENTES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oficina\CLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\CLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oficina\CLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\CLIENTES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oficina\clientes oracle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="clientes oracle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM CLIENTES</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oficina\clientes oracle.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[XE.JARDINERIA]"
+                  connectionManagerRefId="Package.ConnectionManagers[XE.JARDINERIA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_CLIENTE]"
+                      length="10"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[NOMBRE_CLIENTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE_CLIENTE]"
+                      length="150"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[NOMBRE_CLIENTE]"
+                      name="NOMBRE_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[TELEFONO]"
+                      length="30"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[TELEFONO]"
+                      name="TELEFONO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CIUDAD]"
+                      length="80"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CIUDAD]"
+                      name="CIUDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[PAIS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[PAIS]"
+                      length="80"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[PAIS]"
+                      name="PAIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[LIMITE_CREDITO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[LIMITE_CREDITO]"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[LIMITE_CREDITO]"
+                      name="LIMITE_CREDITO"
+                      precision="12"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      length="10"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      name="CODIGO_EMPLEADO_REP_VENTAS"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE_CLIENTE]"
+                      dataType="wstr"
+                      length="150"
+                      name="NOMBRE_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      name="TELEFONO" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      name="CIUDAD" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      name="PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[LIMITE_CREDITO]"
+                      dataType="numeric"
+                      name="LIMITE_CREDITO"
+                      precision="12"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_EMPLEADO_REP_VENTAS" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE_CLIENTE]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE_CLIENTE]"
+                      name="NOMBRE_CLIENTE" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[TELEFONO]"
+                      name="TELEFONO" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CIUDAD]"
+                      name="CIUDAD" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[PAIS]"
+                      name="PAIS" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[LIMITE_CREDITO]"
+                      dataType="numeric"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[LIMITE_CREDITO]"
+                      name="LIMITE_CREDITO"
+                      precision="12"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      name="CODIGO_EMPLEADO_REP_VENTAS" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oficina\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CODIGO_CLIENTE FROM CLIENTES</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CODIGO_CLIENTE FROM CLIENTES) [refTable]
+where [refTable].[CODIGO_CLIENTE] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CODIGO_CLIENTE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Oficina\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLsteging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLsteging]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Oficina\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oficina\Lookup.Inputs[Lookup Input].Columns[CODIGO_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_CLIENTE"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CODIGO_CLIENTE</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oficina\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Oficina\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oficina\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Oficina\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Oficina\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Oficina\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oficina\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Oficina\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Oficina\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Oficina\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Oficina\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[CODIGO_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_CLIENTE"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[NOMBRE_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="NOMBRE_CLIENTE"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[NOMBRE_CLIENTE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[TELEFONO]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="TELEFONO"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[TELEFONO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[CIUDAD]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="CIUDAD"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CIUDAD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[PAIS]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PAIS"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[PAIS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[LIMITE_CREDITO]"
+                      cachedDataType="numeric"
+                      cachedName="LIMITE_CREDITO"
+                      cachedPrecision="12"
+                      cachedScale="2"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[LIMITE_CREDITO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Oficina\Sort.Inputs[Sort Input].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO_REP_VENTAS"
+                      lineageId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Oficina\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[NOMBRE_CLIENTE]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[NOMBRE_CLIENTE]"
+                      name="NOMBRE_CLIENTE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[NOMBRE_CLIENTE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[TELEFONO]"
+                      name="TELEFONO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[TELEFONO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CIUDAD]"
+                      name="CIUDAD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CIUDAD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[PAIS]"
+                      name="PAIS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[PAIS]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[LIMITE_CREDITO]"
+                      dataType="numeric"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[LIMITE_CREDITO]"
+                      name="LIMITE_CREDITO"
+                      precision="12"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[LIMITE_CREDITO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Oficina\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]"
+                      name="CODIGO_EMPLEADO_REP_VENTAS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Oficina\clientes oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO_REP_VENTAS]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Oficina.Paths[Lookup No Match Output]"
+              endId="Package\Oficina\CLIENTES.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Oficina\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Oficina.Paths[OLE DB Source Output]"
+              endId="Package\Oficina\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Oficina\clientes oracle.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Oficina.Paths[Sort Output]"
+              endId="Package\Oficina\Lookup.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\Oficina\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -1023,7 +1887,11 @@ WHERE CODIGO_EMPLEADO=?</property>
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Empleados"
-          TopLeft="174.285714656723,84.1176469850912" />
+          TopLeft="40.0000000851497,24.4705882138447" />
+        <NodeLayout
+          Size="110.4,41.6"
+          Id="Package\Oficina"
+          TopLeft="43.5714286641807,94.8235293286482" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1033,9 +1901,9 @@ WHERE CODIGO_EMPLEADO=?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Empleados\Empleados oracle"
-          TopLeft="186.428571825429,54.2941175994679" />
+          Size="152.8,41.6"
+          Id="Package\Empleados\Derived Column"
+          TopLeft="195.000000415104,250.058823310225" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\Empleados\EMPLEADOS"
@@ -1044,36 +1912,18 @@ WHERE CODIGO_EMPLEADO=?</property>
           Size="97.6,41.6"
           Id="Package\Empleados\Sort"
           TopLeft="221.428571899935,139.941176347924" />
-        <EdgeLayout
-          Id="Package\Empleados.Paths[OLE DB Source Output]"
-          TopLeft="268.528571862682,95.8941175994679">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.0470587484565"
-              Start="0,0"
-              End="0,36.5470587484565">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5470587484565" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Empleados\OLE DB Command"
+          TopLeft="306.428572080878,469.552940795743" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Empleados\Empleados oracle"
+          TopLeft="186.428571825429,54.2941175994679" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Empleados\Lookup"
           TopLeft="214.071429015422,351.147058520556" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Empleados\Derived Column"
-          TopLeft="195.000000415104,250.058823310225" />
         <EdgeLayout
           Id="Package\Empleados.Paths[Sort Output]"
           TopLeft="270.814286157519,181.541176347924">
@@ -1097,19 +1947,19 @@ WHERE CODIGO_EMPLEADO=?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Empleados.Paths[Derived Column Output]"
-          TopLeft="270.935714715263,291.658823310226">
+          Id="Package\Empleados.Paths[OLE DB Source Output]"
+          TopLeft="268.528571862682,95.8941175994679">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.4882352103309"
+              EndConnector="0,44.0470587484565"
               Start="0,0"
-              End="0,51.9882352103309">
+              End="0,36.5470587484565">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.9882352103309" />
+                    End="0,36.5470587484565" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1118,10 +1968,6 @@ WHERE CODIGO_EMPLEADO=?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Empleados\OLE DB Command"
-          TopLeft="306.428572080878,469.552940795743" />
         <EdgeLayout
           Id="Package\Empleados.Paths[Lookup No Match Output]"
           TopLeft="270.471429015422,392.747058520556">
@@ -1194,17 +2040,31 @@ WHERE CODIGO_EMPLEADO=?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Empleados.Paths[Derived Column Output]"
+          TopLeft="270.935714715263,291.658823310226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.4882352103309"
+              Start="0,0"
+              End="0,51.9882352103309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9882352103309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Empleados\Empleados oracle">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Empleados\EMPLEADOS">
     <Properties>
@@ -1219,7 +2079,151 @@ WHERE CODIGO_EMPLEADO=?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Empleados\Empleados oracle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Empleados\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Oficina">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Oficina\clientes oracle"
+          TopLeft="198.571428994135,41.2941176108629" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Oficina\Sort"
+          TopLeft="227.142857626385,133.823529294463" />
+        <EdgeLayout
+          Id="Package\Oficina.Paths[OLE DB Source Output]"
+          TopLeft="273.65714331026,82.8941176108629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.9294116836003"
+              Start="0,0"
+              End="0,43.4294116836003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4294116836003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Oficina\CLIENTES"
+          TopLeft="215.714286173485,353.294117337383" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Oficina\Lookup"
+          TopLeft="225.000000478966,247.764705665178" />
+        <EdgeLayout
+          Id="Package\Oficina.Paths[Sort Output]"
+          TopLeft="278.671429052675,175.423529294463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.3411763707144"
+              Start="0,0"
+              End="0,64.8411763707144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8411763707144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Oficina.Paths[Lookup No Match Output]"
+          TopLeft="279.957143326225,289.364705665178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.9294116722053"
+              Start="0,0"
+              End="0,56.4294116722053">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.4294116722053" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.6750390625,20.2147058361027,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Oficina\clientes oracle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Oficina\CLIENTES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Oficina\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
