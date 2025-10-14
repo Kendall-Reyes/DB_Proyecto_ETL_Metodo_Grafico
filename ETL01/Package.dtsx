@@ -1,0 +1,1245 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/14/2025 11:06:56 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8LS52KM"
+  DTS:CreatorName="DESKTOP-8LS52KM\Kendall Reyes"
+  DTS:DTSID="{3109A16D-3317-4AFC-9C67-75143C2A1640}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{8D3B3548-CCB3-4070-A1F7-75FDE0E77964}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQLsteging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2ED77B8E-8E8C-40A6-899D-637204B03E67}"
+      DTS:ObjectName="SQLsteging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=Steging;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{2ED77B8E-8E8C-40A6-899D-637204B03E67}localhost.Steging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[XE.JARDINERIA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{80357CC7-F11B-4BEF-AF70-A0D5EAE605E9}"
+      DTS:ObjectName="XE.JARDINERIA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=XE;User ID=JARDINERIA;Provider=OraOLEDB.Oracle.1;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACz7jiQlda/Zc9Z87eYve5BsHRRMGZv4IEiLd3yXnXSggAAAAAOgAAAAAIAACAAAADN6XdyriOt7XFSPwLLX33PAIgr5JpZ+DMhbPAKlRou3yAAAACM7zO7jQ9IiBFPuNo8LfmmPodmxM6tD+U6MFBwZWZBN0AAAADvwyRlxjYjL5re2Uxc2nerOR0kytciSz5MI9tj+jcEdjHvdlihaL9OxLh/+Kj33NTsVvnubUOVQ8EIHr2k5BMT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Empleados"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A19F448-DF01-49F5-9830-2282B246D916}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Empleados"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Empleados\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Empleados\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Empleados\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Empleados\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Empleados\Derived Column.Outputs[Derived Column Output].Columns[FECHA]"
+                      name="FECHA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Empleados\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Empleados\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Empleados\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Empleados\EMPLEADOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="EMPLEADOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EMPLEADOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Empleados\EMPLEADOS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLsteging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLsteging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[CODIGO_EMPLEADO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_EMPLEADO]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]" />
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="NOMBRE"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[NOMBRE]" />
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[PUESTO]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PUESTO"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[PUESTO]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[PUESTO]" />
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[CODIGO_OFICINA]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_OFICINA"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_OFICINA]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_OFICINA]" />
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[CODIGO_JEFE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_JEFE"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_JEFE]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_JEFE]" />
+                    <inputColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].Columns[FECHA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PROCESO]"
+                      lineageId="Package\Empleados\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_EMPLEADO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_EMPLEADO" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="120"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[PUESTO]"
+                      dataType="wstr"
+                      length="80"
+                      name="PUESTO" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_OFICINA]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_OFICINA" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_JEFE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_JEFE" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PROCESO]"
+                      dataType="wstr"
+                      length="10"
+                      name="FECHA_PROCESO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Empleados\EMPLEADOS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\EMPLEADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\EMPLEADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Empleados\EMPLEADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\EMPLEADOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Empleados\Empleados oracle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Empleados oracle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM EMPLEADOS</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Empleados\Empleados oracle.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[XE.JARDINERIA]"
+                  connectionManagerRefId="Package.ConnectionManagers[XE.JARDINERIA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_EMPLEADO]"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO]"
+                      name="CODIGO_EMPLEADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE]"
+                      length="120"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[NOMBRE]"
+                      name="NOMBRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[PUESTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[PUESTO]"
+                      length="80"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[PUESTO]"
+                      name="PUESTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_OFICINA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_OFICINA]"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_OFICINA]"
+                      name="CODIGO_OFICINA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_JEFE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_JEFE]"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_JEFE]"
+                      name="CODIGO_JEFE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_EMPLEADO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_EMPLEADO" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="120"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[PUESTO]"
+                      dataType="wstr"
+                      length="80"
+                      name="PUESTO" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_OFICINA]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_OFICINA" />
+                    <externalMetadataColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_JEFE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_JEFE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_EMPLEADO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_EMPLEADO]"
+                      name="CODIGO_EMPLEADO" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE]"
+                      name="NOMBRE" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[PUESTO]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[PUESTO]"
+                      name="PUESTO" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_OFICINA]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_OFICINA]"
+                      name="CODIGO_OFICINA" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_JEFE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_JEFE]"
+                      name="CODIGO_JEFE" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Empleados\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CODIGO_EMPLEADO FROM EMPLEADOS</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CODIGO_EMPLEADO FROM EMPLEADOS) [refTable]
+where [refTable].[CODIGO_EMPLEADO] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CODIGO_EMPLEADO" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Empleados\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLsteging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLsteging]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Empleados\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Empleados\Lookup.Inputs[Lookup Input].Columns[CODIGO_EMPLEADO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CODIGO_EMPLEADO</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Empleados\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Empleados\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Empleados\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Empleados\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Empleados\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Empleados\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Empleados\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Empleados\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE EMPLEADOS SET NOMBRE=?, FECHA_PROCESO=?
+WHERE CODIGO_EMPLEADO=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Empleados\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLsteging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLsteging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="NOMBRE"
+                      externalMetadataColumnId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[NOMBRE]" />
+                    <inputColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].Columns[FECHA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FECHA"
+                      externalMetadataColumnId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Empleados\Derived Column.Outputs[Derived Column Output].Columns[FECHA]" />
+                    <inputColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].Columns[CODIGO_EMPLEADO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="120"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="10"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Empleados\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Empleados\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Empleados\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Empleados\Sort.Inputs[Sort Input].Columns[CODIGO_EMPLEADO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_EMPLEADO"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Empleados\Sort.Inputs[Sort Input].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="NOMBRE"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[NOMBRE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Empleados\Sort.Inputs[Sort Input].Columns[PUESTO]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PUESTO"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[PUESTO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Empleados\Sort.Inputs[Sort Input].Columns[CODIGO_OFICINA]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_OFICINA"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_OFICINA]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Empleados\Sort.Inputs[Sort Input].Columns[CODIGO_JEFE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_JEFE"
+                      lineageId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_JEFE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Empleados\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_EMPLEADO]"
+                      name="CODIGO_EMPLEADO"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_EMPLEADO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Empleados\Sort.Outputs[Sort Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[NOMBRE]"
+                      name="NOMBRE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[NOMBRE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Empleados\Sort.Outputs[Sort Output].Columns[PUESTO]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[PUESTO]"
+                      name="PUESTO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[PUESTO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_OFICINA]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_OFICINA]"
+                      name="CODIGO_OFICINA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_OFICINA]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_JEFE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Empleados\Sort.Outputs[Sort Output].Columns[CODIGO_JEFE]"
+                      name="CODIGO_JEFE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output].Columns[CODIGO_JEFE]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Empleados.Paths[Derived Column Output]"
+              endId="Package\Empleados\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Empleados\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Empleados.Paths[Lookup Match Output]"
+              endId="Package\Empleados\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Empleados\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Empleados.Paths[Lookup No Match Output]"
+              endId="Package\Empleados\EMPLEADOS.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Empleados\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Empleados.Paths[OLE DB Source Output]"
+              endId="Package\Empleados\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Empleados\Empleados oracle.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Empleados.Paths[Sort Output]"
+              endId="Package\Empleados\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Empleados\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Empleados"
+          TopLeft="174.285714656723,84.1176469850912" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Empleados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Empleados\Empleados oracle"
+          TopLeft="186.428571825429,54.2941175994679" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Empleados\EMPLEADOS"
+          TopLeft="62.8571429909493,466.470587826415" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Empleados\Sort"
+          TopLeft="221.428571899935,139.941176347924" />
+        <EdgeLayout
+          Id="Package\Empleados.Paths[OLE DB Source Output]"
+          TopLeft="268.528571862682,95.8941175994679">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0470587484565"
+              Start="0,0"
+              End="0,36.5470587484565">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5470587484565" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Empleados\Lookup"
+          TopLeft="214.071429015422,351.147058520556" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Empleados\Derived Column"
+          TopLeft="195.000000415104,250.058823310225" />
+        <EdgeLayout
+          Id="Package\Empleados.Paths[Sort Output]"
+          TopLeft="270.814286157519,181.541176347924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.5176469623011"
+              Start="0,0"
+              End="0,61.0176469623011">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.0176469623011" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Empleados.Paths[Derived Column Output]"
+          TopLeft="270.935714715263,291.658823310226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.4882352103309"
+              Start="0,0"
+              End="0,51.9882352103309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9882352103309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Empleados\OLE DB Command"
+          TopLeft="306.428572080878,469.552940795743" />
+        <EdgeLayout
+          Id="Package\Empleados.Paths[Lookup No Match Output]"
+          TopLeft="270.471429015422,392.747058520556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-139.214286024473,73.7235293058583"
+              Start="0,0"
+              End="-139.214286024473,66.2235293058583">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.8617646529291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.8617646529291"
+                    Point2="0,36.8617646529291"
+                    Point3="-4,36.8617646529291" />
+                  <mssgle:LineSegment
+                    End="-135.214286024473,36.8617646529291" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135.214286024473,36.8617646529291"
+                    Point2="-139.214286024473,36.8617646529291"
+                    Point3="-139.214286024473,40.8617646529291" />
+                  <mssgle:LineSegment
+                    End="-139.214286024473,66.2235293058583" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.413529730987,41.8617646529291,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Empleados.Paths[Lookup Match Output]"
+          TopLeft="287.938095682089,392.747058520556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.890476398789,76.805882275187"
+              Start="0,0"
+              End="100.890476398789,69.305882275187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3668777963002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.3668777963002"
+                    Point2="0,31.3668777963002"
+                    Point3="4,31.3668777963002" />
+                  <mssgle:LineSegment
+                    End="96.8904763987885,31.3668777963002" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.8904763987885,31.3668777963002"
+                    Point2="100.890476398789,31.3668777963002"
+                    Point3="100.890476398789,35.3668777963002" />
+                  <mssgle:LineSegment
+                    End="100.890476398789,69.305882275187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.25385148064425,36.3668777963002,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Empleados\Empleados oracle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Empleados\EMPLEADOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Empleados\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
