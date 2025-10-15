@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{1E829DB7-1E17-4CB3-A0E0-E8FD4DCC2371}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{DFE2D593-CCF2-41BC-97C3-8C158AC29ACC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAATJuAPzkz+IPySMzYKbiscOLVr3lnM+AgwE2a7QtzKWgAAAAAOgAAAAAIAACAAAADbJgvJSX5PaJPiSwiFE2wdJDI3kb7WaHDpxnBQbPO60iAAAABQLUStBs3+vy7hDLp2sKOHO4MjO4AxTZIfJyLqCLEPr0AAAADX+JBsDtzjXJVsADzzhgNbhuC0ceV8UI+OFkTNwae5OfOHYW0cA1d4Y/J3jhDJp856lqhe4vSF6FTQmAYf/wTv</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAASztN+ROQyjCt7oJDFbFxnJXBFLHuUN0m5VK53XO93/QAAAAAOgAAAAAIAACAAAAAEo0HjBS86a3zzcJMF+eAs+KXwojd40dYtvrYsWlEOzCAAAADJLcr44mTwgSKtjr9AXwVD4U/q5puMIL5d4PV5RW1dtEAAAAAPckwh1myY7ucFd6pd1vricfgRwn6Wf+5TiH/w/3Nw6sJ7+Qef/x3UQQwdZk8zHB5uUlIWyUyJIpU7NVn8KLDY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3661,13 +3661,21 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\GAMA_PRODUCTO\GamaProductosOracle"
-          TopLeft="384.999994263053,59.9999991059303" />
+          Size="112.8,41.6"
+          Id="Package\GAMA_PRODUCTO\Lookup"
+          TopLeft="427.999993622303,269.999995976687" />
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\GAMA_PRODUCTO\Sort"
           TopLeft="424.999993667006,157.999997645617" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\GAMA_PRODUCTO\GAMAS_PRODUCTO"
+          TopLeft="389.999994188547,361.99999460578" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\GAMA_PRODUCTO\GamaProductosOracle"
+          TopLeft="384.999994263053,59.9999991059303" />
         <EdgeLayout
           Id="Package\GAMA_PRODUCTO.Paths[OLE DB Source Output]"
           TopLeft="474.99999396503,101.59999910593">
@@ -3687,17 +3695,11 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\GAMA_PRODUCTO\GAMAS_PRODUCTO"
-          TopLeft="389.999994188547,361.99999460578" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\GAMA_PRODUCTO\Lookup"
-          TopLeft="427.999993622303,269.999995976687" />
         <EdgeLayout
           Id="Package\GAMA_PRODUCTO.Paths[Sort Output]"
           TopLeft="473.799993667007,199.599997645617">
@@ -3729,7 +3731,9 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3759,49 +3763,5 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\GAMA_PRODUCTO\GamaProductosOracle">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\GAMA_PRODUCTO\GAMAS_PRODUCTO">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\GAMA_PRODUCTO\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
