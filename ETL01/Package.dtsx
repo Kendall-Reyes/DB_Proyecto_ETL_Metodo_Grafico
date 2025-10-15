@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{DFE2D593-CCF2-41BC-97C3-8C158AC29ACC}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{7301E4B8-A69D-4739-B6F5-724DA26FCC3B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAASztN+ROQyjCt7oJDFbFxnJXBFLHuUN0m5VK53XO93/QAAAAAOgAAAAAIAACAAAAAEo0HjBS86a3zzcJMF+eAs+KXwojd40dYtvrYsWlEOzCAAAADJLcr44mTwgSKtjr9AXwVD4U/q5puMIL5d4PV5RW1dtEAAAAAPckwh1myY7ucFd6pd1vricfgRwn6Wf+5TiH/w/3Nw6sJ7+Qef/x3UQQwdZk8zHB5uUlIWyUyJIpU7NVn8KLDY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUv3g7nYBN/OPK4bCgrvEr5C1tWnhbXkU0htGSUA4MZAAAAAAOgAAAAAIAACAAAABXC2XybJAr/tZCe5+VV7CzsqDSKhfrj5icKAwSKNfr0SAAAACuD1r4As7Uz4iY2b90wFiB80oK2EuWoU77WV5iqcFRf0AAAABRmxQjknre6vytlFlJtoeLkVOySoTkRMu3MmMzJYPM1T8RFi1mhhFoxgwM+W3p2c3ERdsd/wjVo3k5Gg9vcDsb</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1886,11 +1886,11 @@ WHERE CODIGO_EMPLEADO=?</property>
           version="1">
           <components>
             <component
-              refId="Package\GAMA_PRODUCTO\GamaProductosOracle"
+              refId="Package\GAMA_PRODUCTO\GamasProductosOracle"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="GamaProductosOracle"
+              name="GamasProductosOracle"
               usesDispositions="true"
               version="7">
               <properties>
@@ -1935,7 +1935,7 @@ WHERE CODIGO_EMPLEADO=?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Connections[OleDbConnection]"
+                  refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[XE.JARDINERIA]"
                   connectionManagerRefId="Package.ConnectionManagers[XE.JARDINERIA]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1943,71 +1943,71 @@ WHERE CODIGO_EMPLEADO=?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output]"
+                  refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[GAMA]"
+                      externalMetadataColumnId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[GAMA]"
                       length="60"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]"
                       name="GAMA"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPCION]"
+                      externalMetadataColumnId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPCION]"
                       length="300"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]"
                       name="DESCRIPCION"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[GAMA]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[GAMA]"
                       dataType="wstr"
                       length="60"
                       name="GAMA" />
                     <externalMetadataColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPCION]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPCION]"
                       dataType="wstr"
                       length="300"
                       name="DESCRIPCION" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output]"
+                  refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[GAMA]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[GAMA]"
                       dataType="wstr"
                       length="60"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[GAMA]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[GAMA]"
                       name="GAMA" />
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[DESCRIPCION]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[DESCRIPCION]"
                       dataType="wstr"
                       length="300"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[DESCRIPCION]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[DESCRIPCION]"
                       name="DESCRIPCION" />
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2314,7 +2314,7 @@ where [refTable].[GAMA] = ?</property>
                       cachedDataType="wstr"
                       cachedLength="60"
                       cachedName="GAMA"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]">
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2331,7 +2331,7 @@ where [refTable].[GAMA] = ?</property>
                       cachedDataType="wstr"
                       cachedLength="300"
                       cachedName="DESCRIPCION"
-                      lineageId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]">
+                      lineageId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2365,7 +2365,7 @@ where [refTable].[GAMA] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]}</property>
+                          name="SortColumnId">#{Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[GAMA]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2379,7 +2379,7 @@ where [refTable].[GAMA] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]}</property>
+                          name="SortColumnId">#{Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output].Columns[DESCRIPCION]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2398,7 +2398,7 @@ where [refTable].[GAMA] = ?</property>
               refId="Package\GAMA_PRODUCTO.Paths[OLE DB Source Output]"
               endId="Package\GAMA_PRODUCTO\Sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
-              startId="Package\GAMA_PRODUCTO\GamaProductosOracle.Outputs[OLE DB Source Output]" />
+              startId="Package\GAMA_PRODUCTO\GamasProductosOracle.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\GAMA_PRODUCTO.Paths[Sort Output]"
               endId="Package\GAMA_PRODUCTO\Lookup.Inputs[Lookup Input]"
@@ -3137,6 +3137,728 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PEDIDOS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6DC86F09-9E09-4E0D-860F-2ECD6EF4A832}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PEDIDOS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PEDIDOS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CODIGO_PEDIDO FROM PEDIDOS</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CODIGO_PEDIDO FROM PEDIDOS) [refTable]
+where [refTable].[CODIGO_PEDIDO] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CODIGO_PEDIDO" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_PEDIDO]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PEDIDOS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLStaging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLStaging]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PEDIDOS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Lookup.Inputs[Lookup Input].Columns[CODIGO_PEDIDO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PEDIDO"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_PEDIDO]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CODIGO_PEDIDO</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PEDIDOS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PEDIDOS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PEDIDOS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PEDIDOS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PEDIDOS\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PEDIDOS\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PEDIDOS\PEDIDOS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="PEDIDOS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[PEDIDOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PEDIDOS\PEDIDOS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLStaging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].Columns[CODIGO_PEDIDO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PEDIDO"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_PEDIDO]"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_PEDIDO]" />
+                    <inputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].Columns[CODIGO_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_CLIENTE"
+                      externalMetadataColumnId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_CLIENTE]"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].Columns[FECHA_PEDIDO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FECHA_PEDIDO"
+                      externalMetadataColumnId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PEDIDO]"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[FECHA_PEDIDO]" />
+                    <inputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].Columns[ESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ESTADO"
+                      externalMetadataColumnId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[ESTADO]" />
+                    <inputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].Columns[COMENTARIOS]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="COMENTARIOS"
+                      externalMetadataColumnId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[COMENTARIOS]"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[COMENTARIOS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_PEDIDO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[FECHA_PEDIDO]"
+                      dataType="dbTimeStamp"
+                      name="FECHA_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      dataType="wstr"
+                      length="20"
+                      name="ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input].ExternalColumns[COMENTARIOS]"
+                      dataType="wstr"
+                      length="250"
+                      name="COMENTARIOS" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PEDIDOS\PEDIDOS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\PEDIDOS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PEDIDOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\PEDIDOS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PEDIDOS\PedidosOracle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="PedidosOracle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM PEDIDOS</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PEDIDOS\PedidosOracle.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[XE.JARDINERIA]"
+                  connectionManagerRefId="Package.ConnectionManagers[XE.JARDINERIA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PEDIDO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_PEDIDO]"
+                      length="10"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PEDIDO]"
+                      name="CODIGO_PEDIDO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_CLIENTE]"
+                      length="10"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[FECHA_PEDIDO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[FECHA_PEDIDO]"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[FECHA_PEDIDO]"
+                      name="FECHA_PEDIDO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[ESTADO]"
+                      length="20"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[ESTADO]"
+                      name="ESTADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[COMENTARIOS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[COMENTARIOS]"
+                      length="250"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[COMENTARIOS]"
+                      name="COMENTARIOS"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_PEDIDO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[FECHA_PEDIDO]"
+                      dataType="dbTimeStamp"
+                      name="FECHA_PEDIDO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[ESTADO]"
+                      dataType="wstr"
+                      length="20"
+                      name="ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].ExternalColumns[COMENTARIOS]"
+                      dataType="wstr"
+                      length="250"
+                      name="COMENTARIOS" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_PEDIDO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_PEDIDO]"
+                      name="CODIGO_PEDIDO" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[FECHA_PEDIDO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[FECHA_PEDIDO]"
+                      name="FECHA_PEDIDO" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ESTADO]"
+                      name="ESTADO" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[COMENTARIOS]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[COMENTARIOS]"
+                      name="COMENTARIOS" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PEDIDOS\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\PEDIDOS\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Sort.Inputs[Sort Input].Columns[CODIGO_PEDIDO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PEDIDO"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PEDIDO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Sort.Inputs[Sort Input].Columns[CODIGO_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_CLIENTE"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Sort.Inputs[Sort Input].Columns[FECHA_PEDIDO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FECHA_PEDIDO"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[FECHA_PEDIDO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Sort.Inputs[Sort Input].Columns[ESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="ESTADO"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[ESTADO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PEDIDOS\Sort.Inputs[Sort Input].Columns[COMENTARIOS]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="COMENTARIOS"
+                      lineageId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[COMENTARIOS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PEDIDOS\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_PEDIDO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_PEDIDO]"
+                      name="CODIGO_PEDIDO"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PEDIDO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[CODIGO_CLIENTE]"
+                      name="CODIGO_CLIENTE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[CODIGO_CLIENTE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[FECHA_PEDIDO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[FECHA_PEDIDO]"
+                      name="FECHA_PEDIDO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[FECHA_PEDIDO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[ESTADO]"
+                      name="ESTADO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[ESTADO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[COMENTARIOS]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\PEDIDOS\Sort.Outputs[Sort Output].Columns[COMENTARIOS]"
+                      name="COMENTARIOS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output].Columns[COMENTARIOS]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PEDIDOS.Paths[Lookup No Match Output]"
+              endId="Package\PEDIDOS\PEDIDOS.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\PEDIDOS\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\PEDIDOS.Paths[OLE DB Source Output]"
+              endId="Package\PEDIDOS\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\PEDIDOS\PedidosOracle.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\PEDIDOS.Paths[Sort Output]"
+              endId="Package\PEDIDOS\Lookup.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\PEDIDOS\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -3149,7 +3871,7 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\EMPLEADOS"
@@ -3166,6 +3888,10 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
           Size="167.2,41.6"
           Id="Package\GAMA_PRODUCTO"
           TopLeft="282.857143459272,32.1176470306712" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\PEDIDOS"
+          TopLeft="289.285714901528,102.470588145475" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3663,7 +4389,7 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\GAMA_PRODUCTO\Lookup"
-          TopLeft="427.999993622303,269.999995976687" />
+          TopLeft="416.999993786216,269.999995976687" />
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\GAMA_PRODUCTO\Sort"
@@ -3673,12 +4399,148 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
           Id="Package\GAMA_PRODUCTO\GAMAS_PRODUCTO"
           TopLeft="389.999994188547,361.99999460578" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\GAMA_PRODUCTO\GamaProductosOracle"
+          Size="187.2,41.6"
+          Id="Package\GAMA_PRODUCTO\GamasProductosOracle"
           TopLeft="384.999994263053,59.9999991059303" />
         <EdgeLayout
           Id="Package\GAMA_PRODUCTO.Paths[OLE DB Source Output]"
-          TopLeft="474.99999396503,101.59999910593">
+          TopLeft="476.199993965029,101.59999910593">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.3999985396867"
+              Start="0,0"
+              End="0,48.8999985396867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8999985396867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GAMA_PRODUCTO.Paths[Sort Output]"
+          TopLeft="473.599993726611,199.599997645617">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.39999833107"
+              Start="0,0"
+              End="0,62.89999833107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.89999833107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GAMA_PRODUCTO.Paths[Lookup No Match Output]"
+          TopLeft="474.899993987381,311.599995976687">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.399998629093"
+              Start="0,0"
+              End="0,42.899998629093">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.899998629093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,15.6453118145465,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\PEDIDOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\PEDIDOS\PedidosOracle"
+          TopLeft="401.999994009733,64.9999990314245" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\PEDIDOS\PEDIDOS"
+          TopLeft="409.999993890524,361.99999460578" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\PEDIDOS\Sort"
+          TopLeft="421.99999371171,166.999997511506" />
+        <EdgeLayout
+          Id="Package\PEDIDOS.Paths[OLE DB Source Output]"
+          TopLeft="472.599993860722,106.599999031425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.3999984800816"
+              Start="0,0"
+              End="0,52.8999984800816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8999984800816" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\PEDIDOS\Lookup"
+          TopLeft="410.999993875623,263.999996066093" />
+        <EdgeLayout
+          Id="Package\PEDIDOS.Paths[Sort Output]"
+          TopLeft="469.099993793666,208.599997511506">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.3999985545873"
+              Start="0,0"
+              End="0,47.8999985545873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8999985545873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PEDIDOS.Paths[Lookup No Match Output]"
+          TopLeft="469.299993883073,305.599996066093">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3696,72 +4558,56 @@ where [refTable].[CODIGO_OFICINA] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GAMA_PRODUCTO.Paths[Sort Output]"
-          TopLeft="473.799993667007,199.599997645617">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.5999999552966,70.39999833107"
-              Start="0,0"
-              End="10.5999999552966,62.89999833107">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.199999165535" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.199999165535"
-                    Point2="0,35.199999165535"
-                    Point3="4,35.199999165535" />
-                  <mssgle:LineSegment
-                    End="6.5999999552966,35.199999165535" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5999999552966,35.199999165535"
-                    Point2="10.5999999552966,35.199999165535"
-                    Point3="10.5999999552966,39.199999165535" />
-                  <mssgle:LineSegment
-                    End="10.5999999552966,62.89999833107" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GAMA_PRODUCTO.Paths[Lookup No Match Output]"
-          TopLeft="480.399993905425,311.599995976687">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.3999986290931"
-              Start="0,0"
-              End="0,42.8999986290931">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.8999986290931" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,15.6453118145466,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,18.6453117698431,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PEDIDOS\PedidosOracle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PEDIDOS\PEDIDOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PEDIDOS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
