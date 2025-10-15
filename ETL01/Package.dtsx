@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{93C0B21C-EA13-4B67-AFEF-4170B3891F97}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{01690E9F-C34A-4AED-A863-A8432A9D5F56}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC/KHQC8vb4NwQkQGGjkwojqv+CK3MlYYWM/oMhZTObIQAAAAAOgAAAAAIAACAAAACREgpx9mhPAI7h5KbHTlGiJDkx3ShdJOuTv0O+/H0uFCAAAACYMXFkh+fGb8HIS88euVtorxHNFrKfos0+jOvY3xqGIEAAAACqvWEfx4BxhJnI+VJFrgfy47siAtMPHzG2lU4OR/Wc+UiDwGLJAem0xjB4gbX6DgCKw94JEA8ZSa+SJEeZhTE8</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJyvUITtxvkynzor8SstjKgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABzmMZJploDc80MF/NXn/+icfb/Ellk8RneBO6N+ftegAAAAAAOgAAAAAIAACAAAAC4vNIIV/bdox1OclxcBRJhdX417uRkae5URM0es8wqsyAAAAAQQoF6CImmzbCO/MI8FChdT6VLYPDuq0pp75zEZzj6p0AAAAB4os73HznYy+2xyRYl4hm4k27+Eb587dxdu8VuDldVrtW6k76IcPlwNI4cSTu4EkpJEGYQBPkMDoE+5JE2kzhW</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -5331,6 +5331,1055 @@ where [refTable].[CODIGO_PEDIDO] = ?</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\PROVEEDORES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E45EF367-D80A-4AB2-9ECF-9C4FAA1E624D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PROVEEDORES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\PROVEEDORES\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CODIGO_PROVEEDOR FROM PROVEEDORES</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT CODIGO_PROVEEDOR FROM PROVEEDORES) [refTable]
+where [refTable].[CODIGO_PROVEEDOR] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CODIGO_PROVEEDOR" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CODIGO_PROVEEDOR]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PROVEEDORES\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLStaging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLStaging]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input].Columns[CODIGO_PROVEEDOR]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PROVEEDOR"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CODIGO_PROVEEDOR]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CODIGO_PROVEEDOR</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PROVEEDORES\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PROVEEDORES\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PROVEEDORES\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PROVEEDORES\PROVEEDORES"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="PROVEEDORES"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[PROVEEDORES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PROVEEDORES\PROVEEDORES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQLStaging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQLStaging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[CODIGO_PROVEEDOR]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PROVEEDOR"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_PROVEEDOR]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CODIGO_PROVEEDOR]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="NOMBRE"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[NOMBRE]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[CONTACTO]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="CONTACTO"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTO]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CONTACTO]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[TELEFONO]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="TELEFONO"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[TELEFONO]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[TELEFONO]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[EMAIL]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="EMAIL"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[EMAIL]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[WEB]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="WEB"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[WEB]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[WEB]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[DIRECCION]"
+                      cachedDataType="wstr"
+                      cachedLength="160"
+                      cachedName="DIRECCION"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[DIRECCION]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[DIRECCION]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[CIUDAD]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="CIUDAD"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CIUDAD]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CIUDAD]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[PAIS]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PAIS"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[PAIS]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[PAIS]" />
+                    <inputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].Columns[ESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="ESTADO"
+                      externalMetadataColumnId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[ESTADO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CODIGO_PROVEEDOR]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_PROVEEDOR" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="150"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CONTACTO]"
+                      dataType="wstr"
+                      length="120"
+                      name="CONTACTO" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      name="TELEFONO" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      dataType="wstr"
+                      length="120"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[WEB]"
+                      dataType="wstr"
+                      length="200"
+                      name="WEB" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[DIRECCION]"
+                      dataType="wstr"
+                      length="160"
+                      name="DIRECCION" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      name="CIUDAD" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      name="PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      dataType="wstr"
+                      length="12"
+                      name="ESTADO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PROVEEDORES\PROVEEDORES.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\PROVEEDORES.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\PROVEEDORES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\PROVEEDORES.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PROVEEDORES\ProveedoresOracle"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ProveedoresOracle"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM PROVEEDORES</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\PROVEEDORES\ProveedoresOracle.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[XE.JARDINERIA]"
+                  connectionManagerRefId="Package.ConnectionManagers[XE.JARDINERIA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PROVEEDOR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_PROVEEDOR]"
+                      length="10"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PROVEEDOR]"
+                      name="CODIGO_PROVEEDOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE]"
+                      length="150"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[NOMBRE]"
+                      name="NOMBRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CONTACTO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CONTACTO]"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CONTACTO]"
+                      name="CONTACTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[TELEFONO]"
+                      length="30"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[TELEFONO]"
+                      name="TELEFONO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[EMAIL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[EMAIL]"
+                      name="EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[WEB]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[WEB]"
+                      length="200"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[WEB]"
+                      name="WEB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[DIRECCION]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[DIRECCION]"
+                      length="160"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[DIRECCION]"
+                      name="DIRECCION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CIUDAD]"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CIUDAD]"
+                      name="CIUDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[PAIS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[PAIS]"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[PAIS]"
+                      name="PAIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[ESTADO]"
+                      length="12"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[ESTADO]"
+                      name="ESTADO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CODIGO_PROVEEDOR]"
+                      dataType="wstr"
+                      length="10"
+                      name="CODIGO_PROVEEDOR" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="150"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CONTACTO]"
+                      dataType="wstr"
+                      length="120"
+                      name="CONTACTO" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      name="TELEFONO" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[EMAIL]"
+                      dataType="wstr"
+                      length="120"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[WEB]"
+                      dataType="wstr"
+                      length="200"
+                      name="WEB" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[DIRECCION]"
+                      dataType="wstr"
+                      length="160"
+                      name="DIRECCION" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      name="CIUDAD" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      name="PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].ExternalColumns[ESTADO]"
+                      dataType="wstr"
+                      length="12"
+                      name="ESTADO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_PROVEEDOR]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CODIGO_PROVEEDOR]"
+                      name="CODIGO_PROVEEDOR" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[NOMBRE]"
+                      name="NOMBRE" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CONTACTO]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CONTACTO]"
+                      name="CONTACTO" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[TELEFONO]"
+                      name="TELEFONO" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[EMAIL]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[EMAIL]"
+                      name="EMAIL" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[WEB]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[WEB]"
+                      name="WEB" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[DIRECCION]"
+                      dataType="wstr"
+                      length="160"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[DIRECCION]"
+                      name="DIRECCION" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[CIUDAD]"
+                      name="CIUDAD" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[PAIS]"
+                      name="PAIS" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ESTADO]"
+                      name="ESTADO" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PROVEEDORES\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\PROVEEDORES\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[CODIGO_PROVEEDOR]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="CODIGO_PROVEEDOR"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PROVEEDOR]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="NOMBRE"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[NOMBRE]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[CONTACTO]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="CONTACTO"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CONTACTO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[TELEFONO]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="TELEFONO"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[TELEFONO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[EMAIL]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="EMAIL"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[EMAIL]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[WEB]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="WEB"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[WEB]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[DIRECCION]"
+                      cachedDataType="wstr"
+                      cachedLength="160"
+                      cachedName="DIRECCION"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[DIRECCION]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[CIUDAD]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="CIUDAD"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CIUDAD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[PAIS]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="PAIS"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[PAIS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\PROVEEDORES\Sort.Inputs[Sort Input].Columns[ESTADO]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="ESTADO"
+                      lineageId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[ESTADO]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PROVEEDORES\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CODIGO_PROVEEDOR]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CODIGO_PROVEEDOR]"
+                      name="CODIGO_PROVEEDOR"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CODIGO_PROVEEDOR]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[NOMBRE]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[NOMBRE]"
+                      name="NOMBRE">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[NOMBRE]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CONTACTO]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CONTACTO]"
+                      name="CONTACTO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CONTACTO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[TELEFONO]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[TELEFONO]"
+                      name="TELEFONO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[TELEFONO]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[EMAIL]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[EMAIL]"
+                      name="EMAIL">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[EMAIL]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[WEB]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[WEB]"
+                      name="WEB">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[WEB]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[DIRECCION]"
+                      dataType="wstr"
+                      length="160"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[DIRECCION]"
+                      name="DIRECCION">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[DIRECCION]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CIUDAD]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[CIUDAD]"
+                      name="CIUDAD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[CIUDAD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[PAIS]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[PAIS]"
+                      name="PAIS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[PAIS]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[ESTADO]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\PROVEEDORES\Sort.Outputs[Sort Output].Columns[ESTADO]"
+                      name="ESTADO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output].Columns[ESTADO]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\PROVEEDORES.Paths[Lookup No Match Output]"
+              endId="Package\PROVEEDORES\PROVEEDORES.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\PROVEEDORES\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\PROVEEDORES.Paths[OLE DB Source Output]"
+              endId="Package\PROVEEDORES\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\PROVEEDORES\ProveedoresOracle.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\PROVEEDORES.Paths[Sort Output]"
+              endId="Package\PROVEEDORES\Lookup.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\PROVEEDORES\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -5372,6 +6421,10 @@ where [refTable].[CODIGO_PEDIDO] = ?</property>
           Size="111.2,41.6"
           Id="Package\PAGOS"
           TopLeft="542.142858296937,30.5882352673059" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\PROVEEDORES"
+          TopLeft="547.857144023387,105.529411672205" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6317,5 +7370,141 @@ where [refTable].[CODIGO_PEDIDO] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\PROVEEDORES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\PROVEEDORES\ProveedoresOracle"
+          TopLeft="458.999993160367,32.9999995082617" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\PROVEEDORES\Sort"
+          TopLeft="491.999992668629,147.999997794628" />
+        <EdgeLayout
+          Id="Package\PROVEEDORES.Paths[OLE DB Source Output]"
+          TopLeft="541.499992914498,74.5999995082617">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.3999982863665"
+              Start="0,0"
+              End="0,65.8999982863665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.8999982863665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\PROVEEDORES\PROVEEDORES"
+          TopLeft="472.999992951751,341.999994903803" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\PROVEEDORES\Lookup"
+          TopLeft="483.999992787838,241.999996393919" />
+        <EdgeLayout
+          Id="Package\PROVEEDORES.Paths[Sort Output]"
+          TopLeft="540.599992728233,189.599997794628">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3999985992909"
+              Start="0,0"
+              End="0,44.8999985992909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8999985992909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PROVEEDORES.Paths[Lookup No Match Output]"
+          TopLeft="544.299992869794,283.599996393919">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.3999985098839"
+              Start="0,0"
+              End="0,50.8999985098839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.8999985098839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,19.645311754942,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROVEEDORES\ProveedoresOracle">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROVEEDORES\PROVEEDORES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PROVEEDORES\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
